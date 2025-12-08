@@ -1,0 +1,17 @@
+.zagolovok{
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    color: white;
+    font-family: "Comfortaa", sans-serif;
+}
+td{
+    font-family: "Comfortaa", sans-serif;
+    border: solid white;
+    color: white;
+    border-width: 0px 0px 1px 0px ;
+    font-size: 12pt;
+    padding: 10px;
+    
+}
