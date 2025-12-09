@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { pokemonService } from './useApi';
-
+import {getTypeName,getTypeColor} from './useType'
 
 let fullPokemonList = null;
 

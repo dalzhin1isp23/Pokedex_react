@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { pokemonService, evolutionChainService } from './useApi';
+import {getTypeName,getTypeColor} from './useType'
 
 const extractEvolutionChain = (chainNode) => {
   if (!chainNode || !chainNode.species) return [];

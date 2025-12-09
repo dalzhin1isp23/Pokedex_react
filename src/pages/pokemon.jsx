@@ -1,16 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { usePokemonDetails } from '../hook/usePokemonDetails';
-import { useDispatch, useSelector } from 'react-redux';
-
-
-import {
-  selectTypeName,
-  selectTypeColor
-
-} from '../store/slices/typeSlice'; 
-
-
+import { useSelector } from 'react-redux';
 import '../App.css';
 import '../css/pokemon.css';
 
@@ -19,6 +10,9 @@ const Pokemon = () => {
   const navigate = useNavigate();
 
   const { data: pokemon, isLoading, isError } = usePokemonDetails(ident);
+
+  const typeMap = useSelector((state) => state.types.typeMap);
+  const typeColors = useSelector((state) => state.types.typeColors);
 
   if (isLoading) {
     return (
@@ -33,7 +27,9 @@ const Pokemon = () => {
     return null;
   }
 
-  const readableName = pokemon.name ? pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) : '???';
+  const readableName = pokemon.name
+    ? pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
+    : '???';
 
   return (
     <div className="content">
@@ -55,7 +51,10 @@ const Pokemon = () => {
           }}
         >
           <img
-            src={pokemon.sprites?.front_default || 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'}
+            src={
+              pokemon.sprites?.front_default ||
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'
+            }
             alt={readableName}
             style={{
               width: '150px',
@@ -84,14 +83,15 @@ const Pokemon = () => {
               <tr>
                 <td style={{ color: 'white' }}>Тип</td>
                 <td style={{ color: 'white' }}>
-                  {pokemon.types?.map((t) => (
-                    <span
-                      key={t.type.name}
-                      style={{ color: selectTypeColor(t.type.name), marginRight: '4px' }}
-                    >
-                      {selectTypeName(t.type.name)}
-                    </span>
-                  ))}
+                  {pokemon.types?.map((t) => {
+                    const typeName = typeMap[t.type.name] || t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1);
+                    const typeColor = typeColors[t.type.name] || '#888';
+                    return (
+                      <span key={t.type.name} style={{ color: typeColor, marginRight: '4px' }}>
+                        {typeName}
+                      </span>
+                    );
+                  })}
                 </td>
               </tr>
               <tr>
@@ -241,7 +241,8 @@ const Pokemon = () => {
                 alt={evo.name}
                 style={{ width: '80px', height: '80px', objectFit: 'contain' }}
                 onError={(e) => {
-                  e.target.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png';
+                  e.target.src =
+                    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png';
                 }}
               />
               <div style={{ color: 'white', marginTop: '6px' }}>
