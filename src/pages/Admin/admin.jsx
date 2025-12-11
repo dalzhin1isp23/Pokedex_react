@@ -6,12 +6,12 @@ import {
   createPokemonThunk,
   updateSpriteThunk,
   deletePokemonThunk,
-} from '../../store/slices/adminSlices'; 
+} from '../../features/Admin/adminSlices'; 
 
 import {
   showNotification,
   clearNotification,
-} from '../../store/slices/uiSlice'; 
+} from '../../features/Ui/uiSlice'; 
 
 export const AdminPage = () => {
   const dispatch = useDispatch();

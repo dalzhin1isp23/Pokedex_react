@@ -1,25 +1,25 @@
 import React from 'react';
 import './App.css';
-import { Header } from './components/index';
-import { Navigation } from './components/nav';
-import { Footer } from './components/footer';
-import { NavAdopt } from './components/nav_adopt';
-import Home from './pages/home';
-import Item_list from './pages/item_list';
-import LK from './pages/lk';
-import {AdminPage} from './pages/Admin';
+import { Navigation } from './widgets/nav';
+import { Footer } from './widgets/footer';
+import { NavAdopt } from './widgets/NavAdopt';
+import Home from './pages/Home/Home';
+import ItemList from './pages/ItemPage/List/ItemList';
+import LK from './pages/User/Lk';
+import {Header} from './widgets/header'
+import {AdminPage} from './pages/Admin/Admin';
 // import Author from './pages/author'; 
-import Item from './pages/item';
-import Map_list from './pages/map_list';
-import Map from './pages/map';
-import Pokemon_list from './pages/pokemon_list';
-import Pokemon from './pages/pokemon';
+import Item from './pages/ItemPage/Card/Item';
+import MapList from './pages/MapPage/List/Map_list'
+import Map from './pages/MapPage/Card/Map';
+import PokemonList from './pages/PokemonPage/List/PokemonList';
+import Pokemon from './pages/PokemonPage/Card/Pokemon';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './features/User/AuthContext';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { store } from './store/store';
+import { store } from './store';
 import { Provider } from 'react-redux';
 
 
@@ -45,11 +45,11 @@ const App = () => {
               <Navigation />
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/map_list" element={<Map_list />} />
+                <Route path="/map_list" element={<MapList />} />
                 <Route path="/map_list/map" element={<Map />} />
-                <Route path="/pokemons" element={<Pokemon_list />}/>
+                <Route path="/pokemons" element={<PokemonList />}/>
                 <Route path="/pokemon/:ident" element={<Pokemon />} />
-                <Route path="/items" element={<Item_list />} />
+                <Route path="/items" element={<ItemList />} />
                 <Route path="/items/:id" element={<Item />} />
                 <Route path="/lk" element={<LK />} />
                 {/* <Route path="/author" element={<Author />} /> */}
