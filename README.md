@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Pokedex React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Учебное веб-приложение Pokédex, разработанное с использованием React.
 
-## Available Scripts
+Проект представляет собой интерфейс для просмотра информации о покемонах и был создан в процессе изучения React и разработки клиентских веб-приложений.
 
-In the project directory, you can run:
+## Технологии
 
-### `npm start`
+* JavaScript
+* React
+* HTML
+* CSS
+* Create React App
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Структура проекта
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```text
+Pokedex_react/
+├── public/          # Статические файлы
+├── src/             # Исходный код React-приложения
+├── home.js          # Дополнительная логика приложения
+├── package.json     # Зависимости и npm-скрипты
+└── README.md
+```
 
-### `npm test`
+## Установка
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Клонируйте репозиторий:
 
-### `npm run build`
+```bash
+git clone https://github.com/dalzhin1isp23/Pokedex_react.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Перейдите в папку проекта:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd Pokedex_react
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Установите зависимости:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Запуск
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Для запуска приложения в режиме разработки:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+После запуска приложение будет доступно по адресу:
 
-## Learn More
+```text
+http://localhost:3000
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Сборка
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Для создания production-версии:
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Статус
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Учебный проект, созданный для практики разработки приложений на React.
